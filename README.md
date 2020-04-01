@@ -5,10 +5,7 @@ Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 Hi In this post i will show you a software was i created for Hyper-V machine, that allow you to manage easy your VM on local or remote server, without i credentiel, and without many config, and of corse free.
 
 ```diff
-- text in red
 + Context :
-! text in orange
-# text in gray
 ```
 Context :
 
