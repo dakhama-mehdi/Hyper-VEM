@@ -6,7 +6,7 @@ Hi In this post i will show you a software was i created for Hyper-V machine, th
 
 ```diff
 - text in red
-+ text in green
++ Context :
 ! text in orange
 # text in gray
 ```
