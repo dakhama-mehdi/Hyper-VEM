@@ -7,6 +7,7 @@ Hi In this post i will show you a software was i created for Hyper-V machine, th
 ```diff
 + Context :
 ```
+<p style='color:red'>This is some red text.</p>
 Context :
 
 you find like everyone that hyper-v is the best hypervisor in the world, but you find it hard to work well to switch between machines easily, adapt the display, change network cards in one click, without any credentiel, very fast and very secure ..., this tool is for you, dear community.
