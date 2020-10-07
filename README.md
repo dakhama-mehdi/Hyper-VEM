@@ -20,7 +20,7 @@ Requirements :
 -Windows server 2012 R2 or more
 -Windows 10 1803 or more
 
-#How To use :
+How To use :
 
 ON LOCAL SERVER : 
 
@@ -35,7 +35,7 @@ The two computer must be in the domain, or you must resolve the dns name, and on
 be sur that you are member of the Hyper-V administrators group. if not work install the software on your server and run it just on time. you can then connect on your remote server easly.
 
 
-How To use :
+Howt to Work :
 
 
 after install, run Hyper-VEM as administrator, click list VM, and enjoy.
@@ -43,10 +43,6 @@ to connect VM select VM with mouss and wait the connect estabilish in right.
 to start VM, select it on list, right click mouss and select start VM, wait a few and VM will be appareid in top of the list.
 the VM with green color is current run, without color is shutdown, and yellow color is saved stat.
 to change the network select VM, right click select network, the network will be appareid, click the barre appareid and select network to change.
- 
-
- 
-
  
 
 Important: 
