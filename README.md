@@ -1,22 +1,26 @@
-# Hyper-VEM
+# Hyper-VEM 2020
 Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 ![Alt Text](https://ivellath.sirv.com/Hyper-VEM.gif)
 
-Hi In this post i will show you a software was i created for Hyper-V machine, that allow you to manage easy your VM on local or remote server, without i credentiel, and without many config, and of corse free.
+Hyper-V easy manager is a free software that allow you to manage easy your VM on local or remote server.
 
 Context :
 
-you find like everyone that hyper-v is the best hypervisor in the world, but you find it hard to work well to switch between machines easily, adapt the display, change network cards in one click, without any credentiel, very fast and very secure ..., this tool is for you, dear community.
+Hyper-v is the best hypervisor in the world, but with the default console it is hard to work well as switch between machines easily, adapt the display, change network cards on one click, without any credentiel, it is for these reasons that we have developed Hyper-Vem in order to make the work pleasant, and help Microsoft communnity with fast and secure solution.
 
 Other Usage methods
 
-You can connect on your local server hyper-V or manage the remote server, you can also use RDP connection.
+You can manage local server hyper-V (in domain or not) also the remote server if you are in the domain, you can too use RDP connection.
 
 no authentication required or password to enter, very secure and use integrated credential with TLS2.
 
 Requirements :
 
 -Powershell v5+
+-Windows server 2012 R2 or more
+-Windows 10 1803 or more
+
+#How To use :
 
 ON LOCAL SERVER : 
 
