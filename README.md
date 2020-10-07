@@ -57,3 +57,7 @@ To simule ALT+CTRL+DELETE = you have a bouton in barre named Hotkey
 Feedback :
 
 this is the first version ,all your suggestions and remarks is welcom, to improve the product and make it more useful, thanks
+
+Thanks : 
+
+hamid harabazan https://www.alphorm.com/
