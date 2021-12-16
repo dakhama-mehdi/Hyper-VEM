@@ -1,8 +1,6 @@
 # Hyper-VEM 2021 by Alphorm
 Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 
-![Alt Text](https://ivellath.sirv.com/Hyper-VEM.gif)
-
 ![Hyper-VEM](https://user-images.githubusercontent.com/49924401/146357473-1250effe-7890-4bf7-8013-d0bd51b71238.gif)
 
 Hyper-V easy manager is a free software that allow you to manage easy your VM on local or remote server.
