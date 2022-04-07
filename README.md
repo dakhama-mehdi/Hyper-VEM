@@ -5,10 +5,10 @@ Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 
 Hyper-V easy manager is a free software that allow you to manage easy your VM on local or remote server.
 
-Last version : 
+# Last version : 
 04-2022
 
-Context :
+# Context :
 
 Hyper-v is the best hypervisor in the world, but with the default console it is hard to work well as switch between machines easily, adapt the display, change network cards on one click, without any credentiel, it is for these reasons that we have developed Hyper-Vem in order to make the work pleasant, and help Microsoft communnity with fast and secure solution.
 
@@ -18,29 +18,28 @@ You can manage local server hyper-V (in domain or not) also the remote server if
 
 no authentication required or password to enter, very secure and use integrated credential with TLS2.
 
-Requirements :
+# Requirements :
 
--Powershell v5+
--Windows server 2012 R2 or more
--Windows 10 1803 or more
+* Powershell v5+
+* Windows server 2012 R2 or more
+* Windows 10 1803 or more
 
-How To use :
+# How To use :
 
-ON LOCAL SERVER : 
+* ON LOCAL SERVER : 
 
 
 IF Hyper-v is installed on your Windows Server or your Windows 10, just install this tool and run it with administrator,
 check also if your are member of the Hyper-V administrators group.
 
-On Remote PC : 
+* On Remote PC : 
 
 
 The two computer must be in the domain, or you must resolve the dns name, and on remote PC for exemple you must enable features hyper-V.
 be sur that you are member of the Hyper-V administrators group. if not work install the software on your server and run it just on time. you can then connect on your remote server easly.
 
 
-Howt to Work :
-
+" How to Work :
 
 after install, run Hyper-VEM as administrator, click list VM, and enjoy.
 to connect VM select VM with mouss and wait the connect estabilish in right.
@@ -49,14 +48,12 @@ the VM with green color is current run, without color is shutdown, and yellow co
 to change the network select VM, right click select network, the network will be appareid, click the barre appareid and select network to change.
  
 
-Important: 
+# Important: 
 to switch with VM display, you must click a first time in the new VM on list one time for disconnect the last VM, and second time to connect. then you must click two time on new VM list to switch beetwen VM.
 
 
-Hotkey : 
+#Hotkey : 
 To simule ALT+CTRL+DELETE = you have a bouton in barre named Hotkey 
-
- 
 
 Feedback :
 
