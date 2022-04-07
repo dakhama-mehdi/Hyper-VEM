@@ -39,7 +39,7 @@ The two computer must be in the domain, or you must resolve the dns name, and on
 be sur that you are member of the Hyper-V administrators group. if not work install the software on your server and run it just on time. you can then connect on your remote server easly.
 
 
-" How to Work :
+# How to Work :
 
 after install, run Hyper-VEM as administrator, click list VM, and enjoy.
 to connect VM select VM with mouss and wait the connect estabilish in right.
