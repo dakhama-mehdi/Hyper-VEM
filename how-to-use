@@ -1,0 +1,17 @@
+# Hyper-Virtual Easy Manager 2020
+
+* MH-VEM manages multiple Virtual Machine and also remote server hypervisor .it is useful for managing server labs where you need to have regular access to each machine.
+
+the servers are listed in alphabetical order and also by their status, those in progress are listed in top in green, those are left after without color, and those save in red below.
+Windows 10 or server 2012 r2 at a minimum with a .net and powershell version 4 is required
+
+
+Interface:
+
+the interface is easy to use, remember that you have to run the tool in administrator mode and you should be a member of the Hyper-V administrator group.
+
+
+
+
+In the text box 1: by default the name of the current server is displayed, we can put the name of the server Hyper-v remote.
+button 2: allows to list the machines
