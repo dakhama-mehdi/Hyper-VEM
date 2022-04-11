@@ -11,7 +11,7 @@ Interface:
 the interface is easy to use, remember that you have to run the tool in administrator mode and you should be a member of the Hyper-V administrator group.
 
 
-
-
 In the text box 1: by default the name of the current server is displayed, we can put the name of the server Hyper-v remote.
 button 2: allows to list the machines
+
+![1](https://user-images.githubusercontent.com/49924401/162834069-1fd1f02e-79e5-4191-9621-1da75284cde4.png)
