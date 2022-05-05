@@ -1,8 +1,8 @@
- Help
+How to Install
 
-**Hyper-Virtual Easy Manager**
+* Pre-requist : 
 
-Hyper-VEM manages multiple virtual machines and remote server hypervisor server. Very useful for lab hypervisor server where you need regular access to each virtual machine.
+Current user must be member of Administrators Hyper-V groups (not required right Adminitrators)
 
   
 
