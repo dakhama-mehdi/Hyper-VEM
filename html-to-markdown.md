@@ -10,7 +10,7 @@ Hyper-VEM manages multiple virtual machines and remote server hypervisor server.
 
 Its interface is easy to use. Remember that you must be a member of the Hyper-V Administrators group.
 
-![Menu](pictures/menu-1-2.png "Menu")
+![adjust-display](https://user-images.githubusercontent.com/49924401/166939391-9149c740-890b-4f7b-ac8a-861a34242e67.gif)
 
 **Text box 1:** Will be activated when the virtual machine (VM) is being accessed.
 
