@@ -106,4 +106,4 @@ If you want to adjust the resolution of the virtual machine (VM) for a more **co
 
 Thanks to Gabriel Luiz who prepared this document.
 
-[![gabrielluiz.com](pictures/logo%202.png "gabrielluiz.com")](https://gabrielluiz.com/)
+[![gabrielluiz.com](pictures/logo2.png "gabrielluiz.com")](https://gabrielluiz.com/)
