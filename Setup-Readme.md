@@ -1,20 +1,20 @@
 How to Install
 
-* Pre-requist : 
+ Pre-requist : 
 
-Current user must be member of Administrators Hyper-V groups (not required right Adminitrators)
+* Current user must be member of Administrators Hyper-V groups (not required right Adminitrators)
 
-* Install from store Windwos 10/11 :
+Install from store Windwos 10/11 :
 
-Open Micrsofot Store and Search (Hyper-VEM), then install it
+* Open Micrsofot Store and Search (Hyper-VEM), then install it
 
-* Install on Windows Server :
+Install on Windows Server :
 
-Download exe from Github and run it
+* Download exe from Github and run it
 
-* Use PS1 Script :
+Use PS1 Script :
 
-Download Script PS1 and also Source files, run then script, dont forget to change variable "instaldir" to your current path
+* Download Script PS1 and also Source files, run then script, dont forget to change variable "instaldir" to your current path
 
 * Autorizate Hyper-V Access (Asking from right admin)
 
