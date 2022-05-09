@@ -1,6 +1,6 @@
 # Hyper-VEM 
 
-![Menu](pictures/h-vem.png "Logo")
+![Menu](pictures/hyepr-vem-logo-github.png "Logo")
 
 Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 
