@@ -40,6 +40,14 @@ if get-vm commandlet not working, try it on powershell administrator mode, if wo
 
 Hyper-V dont support hight DPI, the max resolution is 1080p, you need in this case to change DPI from host machine (like 150dpi or 200dpi) on the screen that use the tool, then retry and the view will be adapted, you can also chose the Adjust diplay mode
 
+# Manage remote hyper-server :
+
+* On Remote PC : 
+
+The two computer must be in the domain, or you must resolve the dns name, and on remote PC for exemple you must enable features hyper-V.
+be sur that you are member of the Hyper-V administrators group. if not work install the software on your server and run it just on time. you can then connect on your remote server easly.
+
+
 # Contact
 
 you can contact use for suggestion, or problem on hyper-vem@outlook.com
