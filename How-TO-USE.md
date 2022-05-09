@@ -102,6 +102,6 @@ If you want to adjust the resolution of the virtual machine (VM) for a more **co
 
 ![Adjust virtual machine (VM) resolution for more comfortable viewing](pictures/adjust-display.gif "Adjust virtual machine (VM) resolution for more comfortable viewing") 
 
-“Hyper-Virtual Easy Manager By Dakhama Mehdi"
-Thanks to Gabriel Luiz who prepared this document.
+* “Hyper-Virtual Easy Manager By Dakhama Mehdi"
+* Thanks to Gabriel Luiz MVP for Help and Doc 
 [![gabrielluiz.com](pictures/logo2.png "gabrielluiz.com")](https://gabrielluiz.com/)
