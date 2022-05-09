@@ -2,15 +2,17 @@
 
 Hyper-VEM manages multiple virtual machines and remote server hypervisor server. Very useful for lab hypervisor server where you need regular access to each virtual machine.
   
-Tables : 
-* 1- Interface 
-* 2- Manage Machine
-* 3- Manage the network 
-* 4- Settings (Language-Copy)
-* 5- View Mode
+##### Table of Contents  :
+* [1-Interface](#Interface) 
+* [2-Manage_Machine](#Manage_Machine)  
+* [3-Manage the network](#Manage_network)
+* [4-Settings (Language-Copy)](#Settings)
+* [5-View Mode](#View_Mod)
 
+ 
+## 1-Interface
+<a name="Interface"/>
 
-# 1-Interface
 
 Its interface is easy to use. Remember that you must be a member of the Hyper-V Administrators group.
 
@@ -47,7 +49,9 @@ The virtual machines are listed alphabetically and by status, the virtual machin
 **Yellow – Save** **![Virtual Machine (VM) Saved](pictures/yellow-status-vms.png "Virtual Machine (VM) Saved")  
 **
 
-# 2- Manage Machine
+## 2-Manage_Machine
+<a name="Manage_Machine"/>
+
 
 **To access a virtual machine** is very easy, **just double-click on the name of the virtual machine that is already running**. Click on **HotKey**, then enter your **username** and **password**.
 
@@ -56,9 +60,9 @@ The virtual machines are listed alphabetically and by status, the virtual machin
 **To start a virtual machine (VM)** by **right-clicking it**, then clicking **Start-VM**.
 
 ![Start a virtual machine (VM)](pictures/start-vm.gif "Start a virtual machine (VM)")
-  
-# 3- Manage the network 
 
+## 3-Manage the network 
+<a name="Manage_network"/>
 To **change the network of the virtual machine (VM)**, click **Network**, then select the network you want to **connect** to.
 
 ![Change networks for a virtual machine (VM)](pictures/network-vm.gif "Change networks for a virtual machine (VM)")
@@ -68,7 +72,8 @@ If you **add a new switch (network)** click **Vswitch** in the **top menu** to u
 
 ![Update V-Switch](pictures/new-vswtich.gif "Update V-Switch")
 
-# 4-Settings (Language-Copy)  
+## 4-Settings (Language-Copy)
+<a name="Settings"/>
 
 **Languages:** We can change the language between French, English and Brazilian Portuguese, China, Italia, Spanish
 
@@ -87,8 +92,8 @@ PS : * The file is copied by defaut to C:\temp directory
      
 ![Menu](pictures/Hyper-V-guestservices.png "Logo")
 
-# 5- View Mode
-
+## 5- View Mode
+<a name="View_Mod"/>
 
 By default the **Original Display** is selected, it use the real resolution, you can adjust resolution into the virtual machine (VM), then the resolution change, the original display mode offers a better view. 
 
