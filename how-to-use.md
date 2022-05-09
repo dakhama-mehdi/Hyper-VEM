@@ -80,12 +80,14 @@ If you **add a new switch (network)** click **Vswitch** in the **top menu** to u
 
 **Copy****\-files:** Allows you to **copy files** to the virtual machine (VM).
 
+![Allows you to copy files to the virtual machine (VM)](pictures/copy-files.gif "Allows you to copy files to the virtual machine (VM)") 
+
 PS : * The file is copied by defaut to C:\temp directory
      * You need to enable the "Guest Services" On VM to copy the files (not needeed if copy a text)
      
 ![Menu](pictures/Hyper-V-guestservices.png "Logo")
 
-![Allows you to copy files to the virtual machine (VM)](pictures/copy-files.gif "Allows you to copy files to the virtual machine (VM)") 
+# 5- View Mode
 
 **View:** You can adjust the virtual machine (VM) view. If you want to adjust the resolution of the virtual machine (VM) for a more **comfortable view**, click **View**, then click **Adjust** **D****isplay**, then **double-click the virtual machine (VM) name to apply the change**.
 
