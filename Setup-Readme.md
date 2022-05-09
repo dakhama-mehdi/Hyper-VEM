@@ -1,4 +1,4 @@
-How to Install
+# How to Install
 
  Pre-requist : 
 
