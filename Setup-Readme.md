@@ -1,6 +1,6 @@
 # How to Install
 
- Pre-requist : 
+ Prerequisite : 
 
 * Current user must be member of Administrators Hyper-V groups (not required right Adminitrators or Administrators groups)
 
