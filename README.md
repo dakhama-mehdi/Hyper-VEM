@@ -35,3 +35,7 @@ Hyper-V easy manager is a OpenSource software that allow to manage easy Hyper-V 
 * Windows 10 1803 or later
 * .NET Framework 3.5 or higher
 
+# Credits : 
+
+Thanks to contributor : Gabriel Luiz, Souin Matthieu
+
