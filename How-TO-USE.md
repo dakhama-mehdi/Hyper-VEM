@@ -89,17 +89,16 @@ PS : * The file is copied by defaut to C:\temp directory
 
 # 5- View Mode
 
-**View:** You can adjust the virtual machine (VM) view. If you want to adjust the resolution of the virtual machine (VM) for a more **comfortable view**, click **View**, then click **Adjust** **D****isplay**, then **double-click the virtual machine (VM) name to apply the change**.
 
-![Adjust virtual machine (VM) resolution for more comfortable viewing](pictures/adjust-display.gif "Adjust virtual machine (VM) resolution for more comfortable viewing") 
-
-   
-
-You can adjust the virtual machine (VM) view. If you want to adjust the resolution of the virtual machine (VM) to **view for original view**, click **View**, then click **Original Display**, then **double-click on the virtual machine (VM) name to apply the change**.
+By default the **Original Display** is selected, it use the real resolution, you can adjust resolution into the virtual machine (VM), then the resolution change, the original display mode offers a better view. 
 
 ![Adjust virtual machine (VM) resolution to preview for original display](pictures/original-display.gif "Adjust virtual machine (VM) resolution to preview for original display")
 
-  
+
+**View:** You can use this mode to adjust the virtual machine (VM) view if the resolution is very hight that the screen (example : 1920x1080 on a 1376 screen)
+If you want to adjust the resolution of the virtual machine (VM) for a more **comfortable view**, click **View**, then click **Adjust** **D****isplay**, then **double-click the virtual machine (VM) name to apply the change**.
+
+![Adjust virtual machine (VM) resolution for more comfortable viewing](pictures/adjust-display.gif "Adjust virtual machine (VM) resolution for more comfortable viewing") 
 
 “Hyper-Virtual Easy Manager By Dakhama"
 
