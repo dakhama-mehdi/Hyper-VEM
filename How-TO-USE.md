@@ -13,7 +13,6 @@ Hyper-VEM manages multiple virtual machines and remote server hypervisor server.
 ## 1-Interface
 <a name="Interface"/>
 
-
 Its interface is easy to use. Remember that you must be a member of the Hyper-V Administrators group.
 
 ![Menu](pictures/menu-1-2.png "Menu")
@@ -27,8 +26,6 @@ Its interface is easy to use. Remember that you must be a member of the Hyper-V 
 You can also view information for a virtual machine, but the virtual machine must be running.
 
 ![Virtual machine information](pictures/infor-vm.png "Virtual machine information")
-
-  
 
 **Let's start**
 
@@ -47,7 +44,7 @@ The virtual machines are listed alphabetically and by status, the virtual machin
 **No color – Turn off** **![Virtual Machine (VM) without status](pictures/no-status-vms.png "Virtual Machine (VM) without status")**
 
 **Yellow – Save** **![Virtual Machine (VM) Saved](pictures/yellow-status-vms.png "Virtual Machine (VM) Saved")  
-**
+
 
 ## 2-Manage_Machine
 <a name="Manage_Machine"/>
