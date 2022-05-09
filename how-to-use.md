@@ -2,8 +2,15 @@
 
 Hyper-VEM manages multiple virtual machines and remote server hypervisor server. Very useful for lab hypervisor server where you need regular access to each virtual machine.
   
+Tables : 
 
-**Interface**
+1- Interface 
+2- Manage Machine
+3- Manage the network 
+4- Settings (Language-Copy)
+5- View Mode
+
+# 1-Interface
 
 Its interface is easy to use. Remember that you must be a member of the Hyper-V Administrators group.
 
@@ -40,33 +47,30 @@ The virtual machines are listed alphabetically and by status, the virtual machin
 **Yellow – Save** **![Virtual Machine (VM) Saved](pictures/yellow-status-vms.png "Virtual Machine (VM) Saved")  
 **
 
+# 2- Manage Machine
+
 **To access a virtual machine** is very easy, **just double-click on the name of the virtual machine that is already running**. Click on **HotKey**, then enter your **username** and **password**.
 
 ![Access a virtual machine (VM)](pictures/vm-access.gif "Access a virtual machine (VM)")
 
-  
-
 **To start a virtual machine (VM)** by **right-clicking it**, then clicking **Start-VM**.
 
 ![Start a virtual machine (VM)](pictures/start-vm.gif "Start a virtual machine (VM)")
-
   
+# 3- Manage the network 
 
-You can also **change the network of the virtual machine (VM)**, click **Network**, then select the network you want to **connect** to.
+To **change the network of the virtual machine (VM)**, click **Network**, then select the network you want to **connect** to.
 
 ![Change networks for a virtual machine (VM)](pictures/network-vm.gif "Change networks for a virtual machine (VM)")
 
-  
 
 If you **add a new switch (network)** click **Vswitch** in the **top menu** to update.
 
 ![Update V-Switch](pictures/new-vswtich.gif "Update V-Switch")
 
-  
+# 4-Settings (Language-Copy)  
 
-**Settings**
-
-**Languages:** We can change the language between French, English and Brazilian Portuguese.
+**Languages:** We can change the language between French, English and Brazilian Portuguese, China, Italia, Spanish
 
 ![Change language](pictures/language.gif "Change language")
 
@@ -75,6 +79,9 @@ If you **add a new switch (network)** click **Vswitch** in the **top menu** to u
 ![Allows you to copy a text to the virtual machine (VM)](pictures/copy-clipbord.gif "Allows you to copy a text to the virtual machine (VM)")
 
 **Copy****\-files:** Allows you to **copy files** to the virtual machine (VM).
+
+PS : The file is copied by defaut to C:\temp directory
+You need to enable the "Guest Services" On VM to copy the files (not needeed if copy a text)
 
 ![Allows you to copy files to the virtual machine (VM)](pictures/copy-files.gif "Allows you to copy files to the virtual machine (VM)") 
 
