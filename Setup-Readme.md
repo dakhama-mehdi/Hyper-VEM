@@ -36,7 +36,7 @@ https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-
 if get-vm work, be sure tge current user is in "Hyper-V administrators groups"
 if get-vm commandlet not working, try it on powershell administrator mode, if workin you must added user on administrators groups (may be a problem on systeme)
 
-# Use 2K 4K screen :
+# Using on 2K 4K screen :
 
 Hyper-V dont support hight DPI, the max resolution is 1080p, you need in this case to change DPI from host machine (like 150dpi or 200dpi) on the screen that use the tool, then retry and the view will be adapted, you can also chose the Adjust diplay mode
 
