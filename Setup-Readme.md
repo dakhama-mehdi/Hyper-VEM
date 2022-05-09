@@ -29,7 +29,7 @@ https://docs.microsoft.com/fr-fr/troubleshoot/windows-server/virtualization/vmco
 
 https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/virtualization/vmconnect-fail-to-connect-to-virtual-machine.md
 
-# Troublshouting 
+# Troubleshooting 
 
 * If when you click list Vm or connect and Asking for credential, pls logoff and login, or restart computer
 * If any Machine is not listed, pls open a powershell and enter : get-vm 
