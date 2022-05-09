@@ -2,7 +2,7 @@ How to Install
 
  Pre-requist : 
 
-* Current user must be member of Administrators Hyper-V groups (not required right Adminitrators)
+* Current user must be member of Administrators Hyper-V groups (not required right Adminitrators or Administrators groups)
 
 Install from store Windwos 10/11 :
 
@@ -28,4 +28,19 @@ Article to enable access manually (by key register) :
 https://docs.microsoft.com/fr-fr/troubleshoot/windows-server/virtualization/vmconnect-fail-to-connect-to-virtual-machine
 
 https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/virtualization/vmconnect-fail-to-connect-to-virtual-machine.md
+
+# Troublshouting 
+
+* If when you click list Vm or connect and Asking for credential, pls logoff and login, or restart computer
+* If any Machine is not listed, pls open a powershell and enter : get-vm 
+if get-vm work, be sure tge current user is in "Hyper-V administrators groups"
+if get-vm commandlet not working, try it on powershell administrator mode, if workin you must added user on administrators groups (may be a problem on systeme)
+
+# Use 2K 4K screen :
+
+Hyper-V dont support hight DPI, the max resolution is 1080p, you need in this case to change DPI from host machine (like 150dpi or 200dpi) on the screen that use the tool, then retry and the view will be adapted, you can also chose the Adjust diplay mode
+
+# Contact
+
+you can contact use for suggestion, or problem on hyper-vem@outlook.com
 
