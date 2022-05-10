@@ -17,8 +17,8 @@ Hyper-V easy manager is a OpenSource software that allow to manage easy Hyper-V 
 
 ## Tables of contents : 
 
-* ![1-How_to_Setup](Setup-Readme.md "1-How_to_Setup")
-* ![2-How_To_Use (Help)](How-TO-USE.md "2-How_To_Use (Help)")
+* [a 1-How_to_Setup](Setup-Readme.md)
+* [a 2-How_To_Use (Help)](How-TO-USE.md)
 
 # Reason to use Hyper-VEM :
 
