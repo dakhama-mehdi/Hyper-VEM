@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <action>
+      <ListVM type="string">Mostrar máquina virtual</ListVM>
+	  <File type="string">Arquivo</File>
+	  <Viewdefault type="string">Visualizar</Viewdefault>
+	  <View type="string">Visualizar</View>
+	  <Help type="string">Ajuda</Help>
+	  <Settings type="string">Configurações</Settings>
+	  <About type="string">Sobre</About>
+	  <Usage type="string">Como usar</Usage>
+	  <Displayfix type="string">Exibição original</Displayfix>
+	  <Displayauto type="string">Ajustar exibição</Displayauto>
+	  <Language type="string">Idioma</Language>
+	  <Server type="string">Servidor</Server>
+	  <Network type="string">Rede</Network>
+	  <StartVM	type="string">Iniciar-VM</StartVM>
+	  <StopVM type="string">Desligar-VM</StopVM>
+	  <Savestate type="string">Salvar</Savestate>
+	  <Shutdown type="string">Desativar-VM</Shutdown>
+	  <Exit type="string">Sair</Exit>
+	  <AutorizHV type="string">Você precisa autorizar o acesso ao Hyper-V</AutorizHV>
+	  <Generation type="string">Geração: </Generation>
+	  <NbrProcs type="string">Processador Nbrs : </NbrProcs>
+	  <DRam type="string">Memória dinâmica : </DRam>
+	  <SRam type="string">Memória de inicialização: </SRam>
+	  <AChekpoint type="string">Ponto de verificação automático : </AChekpoint>
+	  <HDD type="string">HDD : </HDD>
+	  <DVD type="string">DVD : </DVD>
+	  <NET type="string">Net : </NET>
+	  <Copyclipbiard type="string">Colar texto</Copyclipbiard> 
+	  <Copyfiles type="string">Copiar arquivos</Copyfiles>  	  
+    </action>

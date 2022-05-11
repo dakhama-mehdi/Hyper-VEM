@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <action>
+      <ListVM type="string">Lister VM</ListVM>
+	  <File type="string">Fichier</File>
+	  <Viewdefault type="string">Affichage</Viewdefault>
+	  <View type="string">Affichage</View>
+	  <Help type="string">Aide</Help>
+	  <Settings type="string">Parametres</Settings>
+	  <About type="string">Apropos</About>
+	  <Usage type="string">Aide</Usage>
+	  <Displayfix type="string">Affichage par defaut</Displayfix>
+	  <Displayauto type="string">Affichage Adapter</Displayauto>
+	  <Language type="string">Langue</Language>
+	  <Server type="string">Serveur Hyper-V</Server>
+	  <Network type="string">Commutateur</Network>
+	  <StartVM	type="string">Démarrer-VM</StartVM>
+	  <StopVM type="string">Arreter-VM</StopVM>
+	  <Savestate type="string">Sauvegarder-VM</Savestate>
+	  <Shutdown type="string">Eteindre-VM</Shutdown>
+	  <Exit type="string">Quitter</Exit>
+	  <AutorizHV type="string">Vous devriez autoriser l'acces à Hyper-V</AutorizHV>
+	  <Generation type="string">Génération : </Generation>
+	  <NbrProcs type="string">Nbrs de Processeurs : </NbrProcs>
+	  <DRam type="string">RAM Dynamique : </DRam>
+	  <SRam type="string">RAM de démarrage : </SRam>
+	  <AChekpoint type="string">Point de control Auto : </AChekpoint>
+	  <HDD type="string">HDD : </HDD>
+	  <DVD type="string">DVD : </DVD>
+	  <NET type="string">Net : </NET>  
+	  <Copyclipbiard type="string">Copie-Text</Copyclipbiard> 
+	  <Copyfiles type="string">Copie-Fichiers</Copyfiles>  
+    </action>
+
+
