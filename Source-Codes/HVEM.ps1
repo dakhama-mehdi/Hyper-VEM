@@ -3,7 +3,7 @@
 # Thanks for Contribution : Gabriel Luiz - MVP
 #                    : Souin Matthieu 
 	 
-# Note: adjust the variable path to the source files ($instaldir)
+# Note: adjust the variable path to target the source files ($instaldir)
 # Move All sources files on ($instaldir Path)
 	
 	#Contact : hyper-vem@outlook.com
