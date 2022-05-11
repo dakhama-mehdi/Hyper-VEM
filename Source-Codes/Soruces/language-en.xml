@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <action>
+      <ListVM type="string">List VM</ListVM>
+	  <File type="string">File</File>
+	  <Viewdefault type="string">View</Viewdefault>
+	  <View type="string">View</View>
+	  <Help type="string">Help</Help>
+	  <Settings type="string">Settings</Settings>
+	  <About type="string">About</About>
+	  <Usage type="string">How To Use</Usage>
+	  <Displayfix type="string">Original Display</Displayfix>
+	  <Displayauto type="string">Adjust Display</Displayauto>
+	  <Language type="string">Language</Language>
+	  <Server type="string">Server</Server>
+	  <Network type="string">Network</Network>
+	  <StartVM	type="string">Start-VM</StartVM>
+	  <StopVM type="string">Stop-VM</StopVM>
+	  <Savestate type="string">Save State</Savestate>
+	  <Shutdown type="string">Shutdown-VM</Shutdown>
+	  <Exit type="string">Exit</Exit>
+	  <AutorizHV type="string">You need to authorize access to Hyper-V</AutorizHV>
+	  <Generation type="string">Generation : </Generation>
+	  <NbrProcs type="string">Nbrs Processor : </NbrProcs>
+	  <DRam type="string">Dynamique RAM : </DRam>
+	  <SRam type="string">Startup RAM : </SRam>
+	  <AChekpoint type="string">Auto Checkpoint : </AChekpoint>
+	  <HDD type="string">HDD : </HDD>
+	  <DVD type="string">DVD : </DVD>
+	  <NET type="string">Net : </NET>  
+	  <Copyclipbiard type="string">Copy-ClipBoard</Copyclipbiard> 
+	  <Copyfiles type="string">Copy-files</Copyfiles>  	  
+    </action>
+
+

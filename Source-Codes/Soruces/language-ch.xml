@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <action>
+      <ListVM type="string">列出虚拟机</ListVM>
+	  <File type="string">文件</File>
+	  <Viewdefault type="string">查看</Viewdefault>
+	  <View type="string">展示</View>
+	  <Help type="string">帮助</Help>
+	  <Settings type="string">参数</Settings>
+	  <About type="string">关于</About>	  
+	  <Usage type="string">帮助</Usage>
+<Displayfix type="string">默认显示</Displayfix>
+<Displayauto type="string">显示适配器</Displayauto>
+<Language type="string">语言</Language>
+<Server type="string">服务器</Server>
+<Network type="string">切换</Network>
+<StartVM type="string">启动-VM</StartVM>
+<StopVM type="string">停止-VM</StopVM>
+<Savestate type="string">维护-VM</Savestate>
+<Shutdown type="string">关闭-VM</Shutdown>
+<Exit type="string">退出</Exit>
+<AutorizHV type="string">你应该授权访问 Hyper-V</AutorizHV>
+<Generation type="string">世代：</Generation>
+<NbrProcs type="string">Nbr 个处理器：</NbrProcs>
+<DRam type="string">动态内存：</DRam>
+<SRam type="string">引导内存：</SRam>
+<AChekpoint type="string">自动检查点：</AChekpoint>
+<HDD type="string">硬盘：</HDD>
+<DVD type="string">DVD: </DVD>
+	  <NET type="string">网络 ： </NET>  
+	  <Copyclipbiard type="string">复制文本</Copyclipbiard> 
+	  <Copyfiles type="string">复制文件</Copyfiles>  
+    </action>
