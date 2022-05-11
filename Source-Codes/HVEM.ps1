@@ -1,12 +1,10 @@
 ﻿
-	
-	# Script to manage virtual machines under Hyper-V - Credits DAKHAMA MEhdi - GithubDakhama ##
-  
-    # Thanks for Contribution : Gabriel Luiz - MVP
-    #                    : Souin Matthieu 
+# Script to manage virtual machines under Hyper-V - Credits DAKHAMA MEhdi - https://github.com/dakhama-mehdi/Hyper-VEM #
+# Thanks for Contribution : Gabriel Luiz - MVP
+#                    : Souin Matthieu 
 	 
-	# Note: adjust the variable path to the source files ($instaldir)
-    # Move All sources files on ($instaldir Path)
+# Note: adjust the variable path to the source files ($instaldir)
+# Move All sources files on ($instaldir Path)
 	
 	#Contact : hyper-vem@outlook.com
 
