@@ -1,8 +1,17 @@
 # How to Install
 
- Prerequisite : 
+##### Table of Contents  :
+* [1-Prerequisite](#Prerequisite) 
+* [2-Install](#Install)  
+* [3-Troubleshooting](#Troubleshooting)
+
+## Prerequisite :
+<a name="Prerequisite"/>  
 
 * Current user must be member of Administrators Hyper-V groups (not required right Adminitrators or Administrators groups)
+
+## Install :
+<a name="Install"/>
 
 Install from store Windwos 10/11 :
 
@@ -29,7 +38,8 @@ https://docs.microsoft.com/fr-fr/troubleshoot/windows-server/virtualization/vmco
 
 https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/virtualization/vmconnect-fail-to-connect-to-virtual-machine.md
 
-# Troubleshooting 
+## Troubleshooting :
+<a name="Troubleshooting"/>
 
 * If when you click list Vm or connect and Asking for credential, pls logoff and login, or restart computer
 * If any Machine is not listed, pls open a powershell and enter : get-vm 
