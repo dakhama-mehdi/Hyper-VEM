@@ -1,6 +1,6 @@
 # Hyper-VEM 
 
-![Menu](pictures/hyepr-vem-logo-github.png "Logo")
+![Logo](pictures/hyepr-vem-logo-github.png "Logo")
 
 Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 
@@ -39,4 +39,11 @@ Hyper-V easy manager is a OpenSource software that allow to manage easy Hyper-V 
 # Credits : 
 
 Thanks to contributor : Gabriel Luiz, Souin Matthieu
+
+# Contacts :
+
+Hyper-vem@outlook.com 
+
+![Demo](pictures/Hyper-VEM-1.gif "Demo")
+
 
