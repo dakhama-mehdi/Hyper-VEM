@@ -41,7 +41,7 @@ https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-
 ## Troubleshooting :
 <a name="Troubleshooting"/>
 
-* If when you click list Vm or connect and Asking for credential, pls logoff and login, or restart computer
+* If you get asking for credential when you click on list Vm or connect, pls logoff and login or restart computer
 * If any Machine is not listed, pls open a powershell and enter : get-vm 
 if get-vm work, be sure tge current user is in "Hyper-V administrators groups"
 if get-vm commandlet not working, try it on powershell administrator mode, if workin you must added user on administrators groups (may be a problem on systeme)
