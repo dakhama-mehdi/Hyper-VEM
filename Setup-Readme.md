@@ -36,6 +36,17 @@ https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-
 if get-vm work, be sure tge current user is in "Hyper-V administrators groups"
 if get-vm commandlet not working, try it on powershell administrator mode, if workin you must added user on administrators groups (may be a problem on systeme)
 
+# Windows 11 / Microsoft Account :
+
+If you use Microsoft Account as current user, pls restart computer when you add user to "Hyper-V Administrators Groups"
+
+If you get message asking to Credential because you use the Microsoft Account like pictures, to repair this you need to create a standard user and add it to the Administrators Hyper-V groups, then when we asked enter the credential of this user and passwords then click on save, in the next time they dont ask you.
+
+![1](pictures/Error/1.png "1")
+![2](pictures/Error/2.png "2)
+![3](pictures/Error/3.png "3")
+![4](pictures/Error/4.png "4")
+
 # Using on 2K 4K screen :
 
 Hyper-V dont support hight DPI, the max resolution is 1080p, you need in this case to change DPI from host machine (like 150dpi or 200dpi) on the screen that use the tool, then retry and the view will be adapted, you can also chose the Adjust diplay mode
