@@ -36,7 +36,7 @@ https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-
 if get-vm work, be sure tge current user is in "Hyper-V administrators groups"
 if get-vm commandlet not working, try it on powershell administrator mode, if workin you must added user on administrators groups (may be a problem on systeme)
 
-# Windows 11 / Microsoft Account :
+# Windows 11 / Microsoft Account (Ask Credential) :
 
 If you use Microsoft Account as current user, pls restart computer when you add user to "Hyper-V Administrators Groups"
 
