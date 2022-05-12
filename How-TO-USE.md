@@ -9,6 +9,7 @@ Hyper-VEM manages multiple virtual machines and remote server hypervisor server.
 * [4-Settings (Language-Copy)](#Settings)
 * [5-View Mode](#View_Mod)
 
+* [6-Troubleshouting/Install](Setup-Readme.md)
  
 ## 1-Interface
 <a name="Interface"/>
