@@ -13,7 +13,7 @@
 ## Install :
 <a name="Install"/>
 
-Install from store Windwos 10/11 :
+Install from store for Windows 10/11 :
 
 * Open Micrsofot Store and Search (Hyper-VEM), then install it
 Or manually frome : https://apps.microsoft.com/store/detail/hypervem/9NPNQ5DZLCQ4?hl=en-il&gl=IL
