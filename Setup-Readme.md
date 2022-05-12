@@ -43,7 +43,7 @@ If you use Microsoft Account as current user, pls restart computer when you add 
 If you get message asking to Credential because you use the Microsoft Account like pictures, to repair this you need to create a standard user and add it to the Administrators Hyper-V groups, then when we asked enter the credential of this user and passwords then click on save, in the next time they dont ask you.
 
 ![1](pictures/Error/1.png "1")
-![2](pictures/Error/2.png "2)
+![2](pictures/Error/2.png "2")
 ![3](pictures/Error/3.png "3")
 ![4](pictures/Error/4.png "4")
 
