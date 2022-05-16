@@ -186,9 +186,9 @@ function Show-VM-mehdi-8-test_psf
 	
 	$script:instaldir = $env:ProgramFiles + "\Hyper-VEM\Hyper-VEM\"
 	
-	[system.reflection.Assembly]::LoadFrom($instaldir + ".\source1.dll")
-	[system.reflection.Assembly]::LoadFrom($instaldir + ".\source2.dll")
-	[system.reflection.Assembly]::LoadFrom($instaldir + ".\source3.dll")
+	[system.reflection.Assembly]::LoadFrom($instaldir + ".\AxInterop.MSTSClib.dll")
+	[system.reflection.Assembly]::LoadFrom($instaldir + ".\AxMSTSClib.dll")
+
 	
 	$HVM = New-Object AxMSTSCLib.AxMsRdpClient9NotSafeForScripting
 	$HVM.Dock = 'Fill'
