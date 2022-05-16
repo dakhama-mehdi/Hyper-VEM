@@ -13,6 +13,9 @@ Hyper-V easy manager is a OpenSource software that allow to manage easy Hyper-V 
 * Add language : spanish, China, Italia
 * Add Copy and Paste From ClipBoard
 * Add Copy files to VM
+* Information of VM
+* ressource using on realtime
+* change Vswitch
 
 ## Tables of contents : 
 
