@@ -191,7 +191,7 @@ function Show-VM-mehdi-8-test_psf
 	[system.reflection.Assembly]::LoadFrom($instaldir + ".\AxInterop.MSTSClib.dll")
 
 	
-	$HVM = New-Object AxMSTSCLib.AxMsRdpClient9NotSafeForScripting
+	$HVM = New-Object AxMSTSCLib.AxMsRdpClient8NotSafeForScripting
 	$HVM.Dock = 'Fill'
 	$HVM.AdvancedSardConfiguration
 	$splitcontainer1.Panel2.Controls.Add($HVM)
