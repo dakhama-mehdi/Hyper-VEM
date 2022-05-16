@@ -8,7 +8,7 @@
 	
 	#Contact : hyper-vem@outlook.com
 
-	#
+	# Source files is from mstscax.dll, you can use your owen dll, we need AxInterop.MSTSCLib.dll and AxMSTSCLib.dll
 
 #----------------------------------------------
 #region Import Assemblies
