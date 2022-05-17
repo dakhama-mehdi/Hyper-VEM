@@ -9,6 +9,10 @@
 	#Contact : hyper-vem@outlook.com
 
 	# Source files is from mstscax.dll, you can use your owen dll, we need AxInterop.MSTSCLib.dll, AxMSTSCLib.dll and MSTSCLib.dll
+	# To create a necessary Dlls, use Aximp.exe from your visual studio or SDK. here is my path "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools"
+	# Copy Mstscax.dll to your Desktop in new folder from "%windir%\system32\mstscax.dll"
+	# then open the CMD go to the Aximp.exe path and enter :  aximp.exe "your_path_to_folder\mstscax.dll"
+	# that will generate the necessary DLLs, change line 193,194,195
 
 #----------------------------------------------
 #region Import Assemblies
