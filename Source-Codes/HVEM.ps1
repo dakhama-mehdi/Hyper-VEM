@@ -303,122 +303,120 @@ function Show-VM-mehdi-8-test_psf
 		
 	}
 	
-	function getinfosVM
-	{
-		#TODO: Place custom script here
+function getinfosVM ($VM)
+{
+	#TODO: Place custom script here
+	
+	$richtextbox1.Clear()
+	
+	Get-VM $VM | Select-Object -Property dvddrives, Generation, processorCount, DynamicMemoryEnabled, MemoryStartup, AutomaticCheckpointsEnabled, HardDrives, NetworkAdapters | ForEach-Object {
 		
-		$richtextbox1.Clear()
+		$richtextbox1.Text = $xmldata.action.Generation.InnerText + $_.Generation + "`r`n"
 		
+		$richtextbox1.Text += "`r`n" + $xmldata.action.NbrProcs.InnerText + $_.processorCount + "`r`n"
 		
-		Get-VM $datagridview1.SelectedRows[0].Cells[1].Value | Select-Object -Property dvddrives, Generation, processorCount, DynamicMemoryEnabled, MemoryStartup, AutomaticCheckpointsEnabled, HardDrives, NetworkAdapters | ForEach-Object {
-			
-			$richtextbox1.Text = $xmldata.action.Generation.InnerText + $_.Generation + "`r`n"
-			
-			$richtextbox1.Text += "`r`n" + $xmldata.action.NbrProcs.InnerText + $_.processorCount + "`r`n"
-			
-			$richtextbox1.Text += "`r`n" + $xmldata.action.DRam.InnerText + $_.DynamicMemoryEnabled + "`r`n"
-			
-			$richtextbox1.Text += "`r`n" + $xmldata.action.SRam.InnerText + $_.MemoryStartup/1MB + " mb" + " `r`n"
-			
-			$richtextbox1.Text += "`r`n" + $xmldata.action.AChekpoint.InnerText + $_.AutomaticCheckpointsEnabled + " `r`n"
-			
-			foreach ($hdd in $_.HardDrives)
+		$richtextbox1.Text += "`r`n" + $xmldata.action.DRam.InnerText + $_.DynamicMemoryEnabled + "`r`n"
+		
+		$richtextbox1.Text += "`r`n" + $xmldata.action.SRam.InnerText + $_.MemoryStartup/1MB + " mb" + " `r`n"
+		
+		$richtextbox1.Text += "`r`n" + $xmldata.action.AChekpoint.InnerText + $_.AutomaticCheckpointsEnabled + " `r`n"
+		
+		foreach ($hdd in $_.HardDrives)
+		{
+			$richtextbox1.Text += "`r`n" + $xmldata.action.HDD.InnerText + $hdd.path.split("\")[-1] + "`r`n"
+		}
+		
+		foreach ($ISO in $_.dvddrives.path)
 			{
-				$richtextbox1.Text += "`r`n" + $xmldata.action.HDD.InnerText + $hdd.path.split("\")[-1] + "`r`n"
-			}
+			if ($ISO) { $richtextbox1.Text += "`r`n" + $xmldata.action.DVD.InnerText  + $iso.split("\")[-1] + "`r`n" }
+		}
+		
+		foreach ($net in $_.NetworkAdapters)
+		{
 			
-			foreach ($ISO in $_.dvddrives.path)
-				{
-				if ($ISO) { $richtextbox1.Text += "`r`n" + $xmldata.action.DVD.InnerText  + $iso.split("\")[-1] + "`r`n" }
-			}
+			$richtextbox1.Text += "`r`n" + $xmldata.action.NET.InnerText  + $net.switchname + "`r`n" + "IP : " + $net.IPAddresses[0] + "`r`n"
 			
-			foreach ($net in $_.NetworkAdapters)
-			{
-				
-				$richtextbox1.Text += "`r`n" + $xmldata.action.NET.InnerText  + $net.switchname + "`r`n" + "IP : " + $net.IPAddresses[0] + "`r`n"
-				
-			}
 		}
 	}
+}
+
 	
-	function New-HVsession ($id, $machine)
+function New-HVsession ($id, $machine)
+{
+	
+	$vmIDTextBox.Text = $id
+	
+	$HVM.Server = $machine
+	
+	$HVM.AdvancedSettings2.DisplayConnectionBar = 'true'
+	$HVM.ConnectingText = 'Connecting...'
+	$HVM.DisconnectedText = "Disconnected"
+	$HVM.AdvancedSettings7.RelativeMouseMode = "true"
+	
+	if ($adapteraLecranToolStripMenuItem.Checked -like "$true")
 	{
-		
-		$vmIDTextBox.Text = $id
-		
-		$HVM.Server = $machine
-		
-		$HVM.AdvancedSettings2.DisplayConnectionBar = 'true'
-		$HVM.ConnectingText = 'Connecting...'
-		$HVM.DisconnectedText = "Disconnected"
-		$HVM.AdvancedSettings7.RelativeMouseMode = "true"
-		
-		if ($adapteraLecranToolStripMenuItem.Checked -like "$true")
-		{
-			$HVM.Dock = 'None'
-			$HVM.AdvancedSettings7.SmartSizing = "true"
-			
-		}
-		else
-		{
-			$HVM.AdvancedSettings7.SmartSizing = "false"
-		}
-		
-		$HVM.AdvancedSettings7.AuthenticationServiceClass = "Microsoft Virtual Console Service"
-		$HVM.AdvancedSettings6.AuthenticationLevel = 0
-		
-		$HVM.AdvancedSettings2.EnableCredSspSupport = "true"
-		$HVM.AdvancedSettings2.NegotiateSecurityLayer = "false"
-		$HVM.AdvancedSettings.ContainerHandledFullScreen = 1
-		
-		$HVM.AdvancedSettings7.DisableRdpdr = 0
-		
-		$HVM.AdvancedSettings8.RedirectClipboard = "true"
-		
-		$HVM.AdvancedSettings2.RDPPort = "2179"
-		$HVM.AdvancedSettings7.PCB = $vmIDTextBox.Text
-		
-		$HVM.Enabled = "true"
-		$HVM.Connect()
+		$HVM.Dock = 'None'
+		$HVM.AdvancedSettings7.SmartSizing = "true"
 		
 	}
-	
-	function deconnecter
+	else
 	{
+		$HVM.AdvancedSettings7.SmartSizing = "false"
+	}
+	
+	$HVM.AdvancedSettings7.AuthenticationServiceClass = "Microsoft Virtual Console Service"
+	$HVM.AdvancedSettings6.AuthenticationLevel = 0
+	
+	$HVM.AdvancedSettings2.EnableCredSspSupport = "true"
+	$HVM.AdvancedSettings2.NegotiateSecurityLayer = "false"
+	$HVM.AdvancedSettings.ContainerHandledFullScreen = 1
+	
+	$HVM.AdvancedSettings7.DisableRdpdr = 0
+	
+	$HVM.AdvancedSettings8.RedirectClipboard = "true"
+	
+	$HVM.AdvancedSettings2.RDPPort = "2179"
+	$HVM.AdvancedSettings7.PCB = $vmIDTextBox.Text
+	
+	$HVM.Enabled = "true"
+	$HVM.Connect()
+	
+}
+
+function deconnecter
+{
+	
+	$HVM.Disconnect()
+	[System.Windows.Forms.Application]::DoEvents() 
+	$splitcontainer1.Panel2.Dock = 'None'
+	$splitcontainer1.Panel2.Update()
+	
+}
+
+$connect_Click={
+	#TODO: Place custom script here
+	$SelectVM = $datagridview1.SelectedCells[0].Value
+	
+	while ($HVM.Connected -ne 0)
+	{
+		deconnecter
+	}
+	
+	$localhost = $textbox1.Text
+
+	if ((get-vm -Name $SelectVM -ComputerName $localhost).state -like "Running")
+	{
+		$vmid = (get-vm -Name $SelectVM -ComputerName $localhost).id
 		
-		$HVM.Disconnect()
-		[System.Windows.Forms.Application]::DoEvents() 
-		$splitcontainer1.Panel2.Dock = 'None'
-		$splitcontainer1.Panel2.Update()
+		New-HVsession $vmid $localhost
+		
+		[System.Windows.Forms.Application]::DoEvents()
+		
+		getinfosVM $SelectVM
 		
 	}
 	
-	$connect_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		
-		while ($HVM.Connected -ne 0)
-		{
-			deconnecter
-		}
-		
-		$localhost = $textbox1.Text
-		
-		
-		if ($datagridview1.SelectedRows[0].Cells[0].Style.BackColor -like "*Green*")
-		{
-			$vm = (get-vm -Name $var1 -ComputerName $localhost).id
-			
-			New-HVsession $vm $localhost
-			
-			[System.Windows.Forms.Application]::DoEvents()
-			
-			getinfosVM
-			
-		}
-		
-	}
+}
 	
 	#region Control Helper Functions
 	function Update-ListBox
@@ -763,29 +761,34 @@ function Show-VM-mehdi-8-test_psf
 	#endregion
 	
 	$buttonListerLesVMs_Click={
-		#TODO: Place custom script here
-		$localhost = $textbox1.Text
-		
-		$vm = Get-vm -name * -ComputerName $localhost | select @{ Name = "VM"; Expression = { $_.name } }, state | Sort-Object state
-		$dt = ConvertTo-DataTable $vm
-		
-		Update-DataGridView -DataGridView $datagridview1 -Item $dt
-		$datagridview1.Columns['state'].Visible = $false
-		$datagridview1.Columns['column1'].Visible = $true
-		foreach ($row in $datagridview1.rows)
-		{
-					
-			if ($row.cells['state'].value -eq '6')
-			{
-				$row.Cells['column1'].Style.BackColor = 'Yellow'
-			}
-			elseif ($row.cells['state'].value -eq '2')
-			{
-				$row.Cells['column1'].Style.BackColor = 'green'
-			}
-		}
+	#TODO: Place custom script here
+	$localhost = $textbox1.Text
+	
+	$datagridview1.Rows.Clear()
+	$datagridview1.ClearSelection()
+	
+	$vm = Get-vm -ComputerName $localhost | select @{ Name = "VM"; Expression = { $_.name } }, state | Sort-Object state 
+	$dt = ConvertTo-DataTable $vm
+	
+	Update-DataGridView -DataGridView $datagridview1 -Item $dt
+	$datagridview1.Columns['state'].Visible = $false
+	$datagridview1.Columns['column1'].Visible = $true
+	
+	foreach ($row in $datagridview1.rows)
+	{
 				
+		if ($row.cells['state'].value -eq '6')
+		{
+			$row.Cells['column1'].Style.BackColor = 'Yellow'
+		}
+		elseif ($row.cells['state'].value -eq '2')
+		{
+			$row.Cells['column1'].Style.BackColor = 'green'
+		}
 	}
+	
+	$datagridview1.Rows[0].Cells[1].Selected = $true
+}
 	
 	$vmIDTextBox_TextChanged={
 		#TODO: Place custom script here
@@ -798,73 +801,74 @@ function Show-VM-mehdi-8-test_psf
 	}
 	
 	$demarrerVMToolStripMenuItem_Click={
-		#TODO: Place custom script here
-			$localhost = $textbox1.Text
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-			Start-VM $var1 -computername $localhost -ErrorVariable noparametre -Confirm:$false
-			if (!$noparametre)
-			{
-			& $buttonListerLesVMs_Click
-			$textbox3.Text = $null	
-			}
-			else
-			{
-				[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
-			}
-	}
-	
-	$arreterVMToolStripMenuItem_Click={
-		#TODO: Place custom script here
-		$localhost = $textbox1.Text
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		Stop-VM $var1 -computername $localhost -ErrorVariable noparametre -Confirm:$false
+	#TODO: Place custom script here
+	$localhost = $textbox1.Text
+	$VM = $datagridview1.SelectedCells[0].Value
+
+		Start-VM $VM -computername $localhost -ErrorVariable noparametre -Confirm:$false
 		if (!$noparametre)
 		{
-			& $buttonListerLesVMs_Click
-			$textbox3.Text = $null
+		& $buttonListerLesVMs_Click
+		$textbox3.Text = $null	
 		}
 		else
 		{
 			[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
 		}
-		
+}
+
+$arreterVMToolStripMenuItem_Click={
+	#TODO: Place custom script here
+	$localhost = $textbox1.Text
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	Stop-VM $VMselect -computername $localhost -ErrorVariable noparametre -Confirm:$false
+	if (!$noparametre)
+	{
+		& $buttonListerLesVMs_Click
+		$textbox3.Text = $null
+	}
+	else
+	{
+		[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
 	}
 	
-	$eteindreLaVMToolStripMenuItem_Click={
-		#TODO: Place custom script here
-		$localhost = $textbox1.Text
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		Stop-VM $var1 -TurnOff -computername $localhost -ErrorVariable noparametre -Confirm:$false
-		if (!$noparametre)
-		{
-			& $buttonListerLesVMs_Click
-			$textbox3.Text = $null
-		}
-		else
-		{
-			[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
-		}	
+}
+
+$eteindreLaVMToolStripMenuItem_Click={
+	#TODO: Place custom script here
+	$localhost = $textbox1.Text
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	Stop-VM $VMselect -TurnOff -computername $localhost -ErrorVariable noparametre -Confirm:$false
+	if (!$noparametre)
+	{
+		& $buttonListerLesVMs_Click
+		$textbox3.Text = $null
 	}
-	
-	$enregistrerEtatToolStripMenuItem_Click={
-		#TODO: Place custom script here
-		$localhost = $textbox1.Text
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		Stop-VM $var1 -Save -computername $localhost -ErrorVariable noparametre -Confirm:$false
-		if (!$noparametre)
-		{
-			& $buttonListerLesVMs_Click
-			$textbox3.Text = $null
-		}
-		else
-		{
-			[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
-		}	
+	else
+	{
+		[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
+	}	
+}
+
+$enregistrerEtatToolStripMenuItem_Click={
+	#TODO: Place custom script here
+	$localhost = $textbox1.Text
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	Stop-VM $VMselect -Save -computername $localhost -ErrorVariable noparametre -Confirm:$false
+	if (!$noparametre)
+	{
+		& $buttonListerLesVMs_Click
+		$textbox3.Text = $null
 	}
+	else
+	{
+		[System.Windows.Forms.MessageBox]::Show($noparametre, 'error', 'ok', 'error')
+	}	
+}
+
 	
 	$menustrip1_ItemClicked=[System.Windows.Forms.ToolStripItemClickedEventHandler]{
 	#Event Argument: $_ = [System.Windows.Forms.ToolStripItemClickedEventArgs]
@@ -1013,9 +1017,9 @@ function Show-VM-mehdi-8-test_psf
 	
 	$okToolStripMenuItem_Click={
 		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(get-vm $var1).NetworkAdapters | select -First 1 | Connect-VMNetworkAdapter -SwitchName $vswitch2.Text
+		
+		$VMselect = $datagridview1.SelectedCells[0].Value	
+		(get-vm $VMselect).NetworkAdapters | select -First 1 | Connect-VMNetworkAdapter -SwitchName $vswitch2.Text
 	}
 	
 	
@@ -1035,184 +1039,178 @@ function Show-VM-mehdi-8-test_psf
 	
 	}
 	
-	$réseauToolStripMenuItem_Click={
-		#TODO: Place custom script here
-		
-		if ($textbox2.Text -eq "1")
+	
+$réseauToolStripMenuItem_Click={
+	#TODO: Place custom script here
+	
+	if ($textbox2.Text -eq "1")
+	{
+		& $buttonVswitch_Click
+		$textbox2.Text = "2"
+	}
+	$localhost = $textbox1.Text
+	$Netadap1.Visible = $false
+	$Netadap2.Visible = $false
+	$Netadap3.Visible = $false
+	$Netadap4.Visible = $false
+	$Netadap1.Text = $null
+	$Netadap2.Text = $null
+	$Netadap3.Text = $null
+	$Netadap4.Text = $null
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	$lan = (get-vm $VMselect -computername $localhost).NetworkAdapters.switchname
+	foreach ($obj in $lan)
+	{
+		if (!($Netadap1.text))
 		{
-			& $buttonVswitch_Click
-			$textbox2.Text = "2"
+			
+			$Netadap1.Visible = $true
+			if (!($obj))
+			{
+				$Netadap1.Text = "not connected"
+			}
+			else
+			{
+				$Netadap1.Text = $obj
+			}
+			$vswitch1.Visible = $false
+			}
+		elseif (!($Netadap2.text)) 	{
+			$Netadap2.Visible = $true
+			if (!($obj))
+			{
+				$Netadap2.Text = "not connected"
+			}
+			else
+			{
+				$Netadap2.Text = $obj
+			}
+			$vswitch2.Visible = $false
 		}
-		$localhost = $textbox1.Text
-		$Netadap1.Visible = $false
-		$Netadap2.Visible = $false
-		$Netadap3.Visible = $false
-		$Netadap4.Visible = $false
-		$Netadap1.Text = $null
-		$Netadap2.Text = $null
-		$Netadap3.Text = $null
-		$Netadap4.Text = $null
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		$lan = (get-vm $var1 -computername $localhost).NetworkAdapters.switchname
-		foreach ($obj in $lan)
+		elseif (!($Netadap3.text)) {
+			$Netadap3.Visible = $true
+			if (!($obj))
+			{
+				$Netadap3.Text = "not connected"
+			}
+			else
+			{
+				$Netadap3.Text = $obj
+			}
+			$vswitch3.Visible = $false
+		}
+		elseif (!($Netadap4.text))
 		{
-			if (!($Netadap1.text))
+			$Netadap4.Visible = $true
+			if (!($obj))
 			{
-				
-				$Netadap1.Visible = $true
-				if (!($obj))
-				{
-					$Netadap1.Text = "not connected"
-				}
-				else
-				{
-					$Netadap1.Text = $obj
-				}
-				$vswitch1.Visible = $false
-				}
-			elseif (!($Netadap2.text)) 	{
-				$Netadap2.Visible = $true
-				if (!($obj))
-				{
-					$Netadap2.Text = "not connected"
-				}
-				else
-				{
-					$Netadap2.Text = $obj
-				}
-				$vswitch2.Visible = $false
+				$Netadap4.Text = "not connected"
 			}
-			elseif (!($Netadap3.text)) {
-				$Netadap3.Visible = $true
-				if (!($obj))
-				{
-					$Netadap3.Text = "not connected"
-				}
-				else
-				{
-					$Netadap3.Text = $obj
-				}
-				$vswitch3.Visible = $false
-			}
-			elseif (!($Netadap4.text))
+			else
 			{
-				$Netadap4.Visible = $true
-				if (!($obj))
-				{
-					$Netadap4.Text = "not connected"
-				}
-				else
-				{
-					$Netadap4.Text = $obj
-				}
-				$vswitch4.Visible = $false
+				$Netadap4.Text = $obj
 			}
+			$vswitch4.Visible = $false
 		}
 	}
-	
-	
-	$Netadap1_Click={
-		#TODO: Place custom script here
-		$vswitch1.Visible = $true
+}
+
+
+$Netadap1_Click={
+	#TODO: Place custom script here
+	$vswitch1.Visible = $true
+}
+
+$vswitch1_Click={
+	#TODO: Place custom script here
 	}
+
+$vswitchok_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	(Get-VMNetworkAdapter $VMselect)[0] | Connect-VMNetworkAdapter -SwitchName $vswitch1.Text
+	[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
+}
+
+$Netadap2_Click={
+	#TODO: Place custom script here
+	#$switch = (Get-VMNetworkAdapter -ManagementOS).name
+	$vswitch2.Visible = $true
+}
+
+$Netadap3_Click={
+	#TODO: Place custom script here
+	$vswitch3.Visible = $true
+}
+
+$vswitch2_Click={
+	#TODO: Place custom script here
 	
-	$vswitch1_Click={
-		#TODO: Place custom script here
-		}
+}
+
+$vswitchok2_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	(Get-VMNetworkAdapter $VMselect)[1] | Connect-VMNetworkAdapter -SwitchName $vswitch2.Text
+	[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
+}
+
+$disconnect1_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	(Get-VMNetworkAdapter $VMselect)[0] | Disconnect-VMNetworkAdapter
+}
+
+$disconnect2_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	(Get-VMNetworkAdapter $VMselect)[1] | Disconnect-VMNetworkAdapter
+}
+
+$disconnect3_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	(Get-VMNetworkAdapter $VMselect)[2] | Disconnect-VMNetworkAdapter
+}
+
+$vswitchok3_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	#$VMselect = $datagridview1.SelectedRows[0].Cells[1].Value
+	(Get-VMNetworkAdapter $VMselect)[2] | Connect-VMNetworkAdapter -SwitchName $vswitch3.Text
+	[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
+}
+
+$textbox1_TextChanged={
+	#TODO: Place custom script here
 	
-	$vswitchok_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[0] | Connect-VMNetworkAdapter -SwitchName $vswitch1.Text
-		[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
-	}
-	
-	$Netadap2_Click={
-		#TODO: Place custom script here
-		#$switch = (Get-VMNetworkAdapter -ManagementOS).name
-		$vswitch2.Visible = $true
-	}
-	
-	$Netadap3_Click={
-		#TODO: Place custom script here
-		$vswitch3.Visible = $true
-	}
-	
-	$vswitch2_Click={
-		#TODO: Place custom script here
-		
-	}
-	
-	$vswitchok2_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[1] | Connect-VMNetworkAdapter -SwitchName $vswitch2.Text
-		[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
-	}
-	
-	$disconnect1_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[0] | Disconnect-VMNetworkAdapter
-	}
-	
-	$disconnect2_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[1] | Disconnect-VMNetworkAdapter
-	}
-	
-	$disconnect3_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[2] | Disconnect-VMNetworkAdapter
-	}
-	
-	$vswitchok3_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[2] | Connect-VMNetworkAdapter -SwitchName $vswitch3.Text
-		[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
-	}
-	
-	$textbox1_TextChanged={
-		#TODO: Place custom script here
-		
-	}
-	
-	$buttonOK_Click={
-		#TODO: Place custom script here
-		Write-Host $localhost
-		}
-	
-	
+}
+
 	$hotkeyToolStripMenuItem_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-	
-		if ($computenrame -eq $textbox1.Text)
-		{
-			$ComputerSystem = Get-WmiObject -Query "select * from Msvm_ComputerSystem where ElementName = '$var1'" -Namespace "root\virtualization\v2"
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+
+	if ($computenrame -eq $textbox1.Text)
+	{
+		$ComputerSystem = Get-WmiObject -Query "select * from Msvm_ComputerSystem where ElementName = '$VMselect'" -Namespace "root\virtualization\v2"
+		$Keyboard = Get-WmiObject -Query "ASSOCIATORS OF {$($ComputerSystem.path.path)} WHERE resultClass = Msvm_Keyboard" -Namespace "root\virtualization\v2"
+		$Keyboard.TypeCtrlAltDel()
+	}
+	else
+	{
+		Invoke-Command -ComputerName $textbox1.Text -ScriptBlock {
+			$ComputerSystem = Get-WmiObject -Query "select * from Msvm_ComputerSystem where ElementName = '$using:var1'" -Namespace "root\virtualization\v2"
 			$Keyboard = Get-WmiObject -Query "ASSOCIATORS OF {$($ComputerSystem.path.path)} WHERE resultClass = Msvm_Keyboard" -Namespace "root\virtualization\v2"
 			$Keyboard.TypeCtrlAltDel()
 		}
-		else
-		{
-			Invoke-Command -ComputerName $textbox1.Text -ScriptBlock {
-				$ComputerSystem = Get-WmiObject -Query "select * from Msvm_ComputerSystem where ElementName = '$using:var1'" -Namespace "root\virtualization\v2"
-				$Keyboard = Get-WmiObject -Query "ASSOCIATORS OF {$($ComputerSystem.path.path)} WHERE resultClass = Msvm_Keyboard" -Namespace "root\virtualization\v2"
-				$Keyboard.TypeCtrlAltDel()
-			}
-		}
 	}
+}
 	
 	$buttonPscheck_Click={
 		#TODO: Place custom script here
@@ -1272,6 +1270,7 @@ function Show-VM-mehdi-8-test_psf
 	$textbox3_TextChanged={
 		#TODO: Place custom script here
 		$datagridview1.DataSource.DefaultView.RowFilter = "VM LIKE '*$($textbox3.Text)*'"
+		
 		foreach ($row in $datagridview1.rows)
 		{
 			
@@ -1297,19 +1296,18 @@ function Show-VM-mehdi-8-test_psf
 		
 	}
 	
-	$datagridview1_CellMouseEnter=[System.Windows.Forms.DataGridViewCellEventHandler]{
-	#Event Argument: $_ = [System.Windows.Forms.DataGridViewCellEventArgs]
-		#TODO: Place custom script here
-					
-		$var = get-vm $datagridview1.SelectedRows[0].Cells[1].Value | Select-Object State, CPUUsage, @{ n = "RAM"; e = { $_.MemoryAssigned/1MB } }, @{ n = "Uptime"; e = { $_.uptime } }
-		
-		if ($var.state -eq "Running")
-		{
-			
-			$datagridview1.SelectedRows[0].Cells[1].ToolTipText	 = "CPU % : " + $var.cpuusage + "`r`n" + "RAM : " + $var.ram + "`r`n" + "Uptime : " + $var.uptime.hours + ":" + $var.uptime.minutes
-			
+$datagridview1_CellMouseEnter=[System.Windows.Forms.DataGridViewCellEventHandler]{
+#Event Argument: $_ = [System.Windows.Forms.DataGridViewCellEventArgs]
+	#TODO: Place custom script here
+	
+	
+	if ((get-vm  $datagridview1.SelectedCells[0].Value).state -eq "Running")
+	{
+		get-vm  $datagridview1.SelectedCells[0].Value | Select-Object State, CPUUsage, @{ n = "RAM"; e = { $_.MemoryAssigned/1MB } }, @{ n = "Uptime"; e = { $_.uptime } } | ForEach-Object {
+			$datagridview1.SelectedCells[0].ToolTipText = "CPU % : " + $_.cpuusage + "`r`n" + "RAM : " + $_.ram + "`r`n" + "Uptime : " + $_.uptime.hours + ":" + $_.uptime.minutes
 		}
 	}
+}
 	
 	$toolstriptextbox1_Click={
 		#TODO: Place custom script here
@@ -1321,24 +1319,23 @@ function Show-VM-mehdi-8-test_psf
 		
 	}
 	
-	$vswitchok4_Click={
-		#TODO: Place custom script here
-		#$var1 = $datagridview1.SelectedCells[0].Value
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[3] | Connect-VMNetworkAdapter -SwitchName $vswitch4.Text
-		[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
-	}
-	
-	$disconnect4_Click={
-		#TODO: Place custom script here
-		$var1 = $datagridview1.SelectedRows[0].Cells[1].Value
-		(Get-VMNetworkAdapter $var1)[3] | Disconnect-VMNetworkAdapter
-	}
-	
-	$Netadap4_Click={
-		#TODO: Place custom script here
-		$vswitch4.Visible = $true
-	}
+$vswitchok4_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	(Get-VMNetworkAdapter $VMselect)[3] | Connect-VMNetworkAdapter -SwitchName $vswitch4.Text
+	[System.Windows.Forms.MessageBox]::Show("connecter ", 'Vswitch')
+}
+
+$disconnect4_Click={
+	#TODO: Place custom script here
+	$VMselect = $datagridview1.SelectedCells[0].Value
+	(Get-VMNetworkAdapter $VMselect)[3] | Disconnect-VMNetworkAdapter
+}
+
+$Netadap4_Click={
+	#TODO: Place custom script here
+	$vswitch4.Visible = $true
+}
 	
 	$brzeliToolStripMenuItem_Click={
 		#TODO: Place custom script here
