@@ -2057,19 +2057,7 @@ fr+f5iUSyVdGJBK9FggEb+9JKBS+Qd3LocgWvPq9DP8cDPMLIrQRkNlmm14AAAAASUVORK5CYII=')
 	#
 	# copyClipboardToolStripMenuItem
 	#
-	#region Binary Data
-	$copyClipboardToolStripMenuItem.Image = [System.Convert]::FromBase64String('
-iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlz
-AAAOvAAADrwBlbxySQAAAbRJREFUOE+Vk00oRFEUx99CFpLRmIwZH03EyuZlI2HIQmg0m2EWPkpN
-WQhRFlJiQxYkNaHJSllJ+UxonlDEpJeF2VAmZZSJkRSbo/+ZeebpzmKc+nXvfef8/+/c++6TUg2X
-q43i0/8HxJtb2+RodaZuMtmdRhcL6XS6PkB39/f0FA7ziDWeIx8vFcNRZ6OH1QzmfLmUTpbKf8Fa
-y6GOBWhRT4+rms4Wa+lyxU5X3iIK+jKT4qjJJampuYWib6/cInh8ema09XPohk5mskj1GgTYoLOj
-gwVbO7u0f3DIHPkVHhVFYfPtMQOdzxkFmqvySHK73fwmCPzKMYs1g5dIhA3WhrLJP20SaKy0xDpA
-USAQIFVVWQTDUCjE88+Pd/L1GmlvwiyQMIhG+RPB4DYY5BFrmCA3351DG6NWgfqK/NgWUIT9AnQC
-MIcBOphqN9HacKEAG2gd6MUQaiA37syllT6bgF0uIL4DKNLOQD/iOc5npMlMXk+JQI1cnDCASA/O
-AGIcZH+DhWa7yv7gabDS4OBA7CKhCAINGH59fzPX6g3JskzYqh6+wlrABH9aMpCLlyUJSfoBVdAv
-5UqJ54oAAAAASUVORK5CYII=')
-	#endregion
+	
 	$copyClipboardToolStripMenuItem.Name = 'copyClipboardToolStripMenuItem'
 	$copyClipboardToolStripMenuItem.Size = '159, 22'
 	$copyClipboardToolStripMenuItem.Text = 'Copy-Clipboard'
@@ -2077,15 +2065,7 @@ AGIcZH+DhWa7yv7gabDS4OBA7CKhCAINGH59fzPX6g3JskzYqh6+wlrABH9aMpCLlyUJSfoBVdAv
 	#
 	# copyFilesToolStripMenuItem
 	#
-	#region Binary Data
-	$copyFilesToolStripMenuItem.Image = [System.Convert]::FromBase64String('
-iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlz
-AAAOvAAADrwBlbxySQAAAOtJREFUOE+1krEKwkAMhvuIboL4Cl18AHGr4CBCwUEXJ0WLWKQ6FuEE
-LThUHIQDB19BcY3kIDR3vWtd/CBtCOlHfqiXJAm4Ks9z8OrARRv4sRACsiyrlrgEUkr1rpVwwfO4
-gHW3oXqKYSstGg6I+9IHMW6pns85pWi0+Hp/4JbO4HGKVO8SlKLR4mCygc4oBn8Yw3S+0wQ8Gn6E
-ErwkDMNCEO0FtPtbaPZWcDhfNQGPxgmCoBAQeD5CczMaRxOkF6kVzc1oHOsFBM3NaJyfBAQ/n3ol
-wIetSGBGo0JwT/0LNlyXcf4roCjVFcAXC47j08/jtroAAAAASUVORK5CYII=')
-	#endregion
+
 	$copyFilesToolStripMenuItem.Name = 'copyFilesToolStripMenuItem'
 	$copyFilesToolStripMenuItem.Size = '159, 22'
 	$copyFilesToolStripMenuItem.Text = 'Copy-Files'
