@@ -7,7 +7,7 @@ Hyper-Virtual Easy Manager to control Hyper-V machine (hyper-VEM)
 Hyper-V easy manager is a OpenSource software that allow to manage easy Hyper-V server
 
 # Last version : 
-* 2.05 release (05/2022)
+* 3.01 release (05/2024)
 
 # Whats News :
 * Add language : spanish, China, Italia
